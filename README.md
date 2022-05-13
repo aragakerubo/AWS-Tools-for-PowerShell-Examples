@@ -25,7 +25,7 @@ Set-ExecutionPolicy RemoteSigned
 
 Answer "Y" to the interactive prompts.
 
-Next, set the proper AWS Credentials. If you don't have an administrator set up for your AWS account, follow the instructions (here)[https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html].
+Next, set the proper AWS Credentials. If you don't have an administrator set up for your AWS account, follow the instructions [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html).
 Once the administartor user has been set up, generate access keys for that user and securely store that information.
 
 To add a new profile to the AWS SDK store, run the command (replace the `AccessKey` and `SecretKey` codes with the administrator access keys):
