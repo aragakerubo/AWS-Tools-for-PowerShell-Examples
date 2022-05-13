@@ -1,6 +1,50 @@
 # AWS Tools for PowerShell
 
-Here are some examples:
+## Installation and Configuration (on Windows)
+Run the Windows PowerShell as Administrator.
+Run the following command to install AWS Tools for PowerShell:
+
+```powershell
+Install-Module -Name AWSPowerShell
+```
+
+Answer "Y" to the interactive prompts.
+
+Next, try to see if the application has installed correctly:
+
+```powershell
+Get-AWSPowerShellVersion
+```
+
+Incase you encounter errors stating that "... the module could not be loaded ..." or that the module "... cannot be loaded because running scripts is disabled on this system ..." you may need to change the Execution Policy.
+Run the following command to change the Execution Policy:
+
+```powershell
+Set-ExecutionPolicy RemoteSigned
+```
+
+Answer "Y" to the interactive prompts.
+
+Next, set the proper AWS Credentials. If you don't have an administrator set up for your AWS account, follow the instructions (here)[https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html].
+Once the administartor user has been set up, generate access keys for that user and securely store that information.
+
+To add a new profile to the AWS SDK store, run the command (replace the `AccessKey` and `SecretKey` codes with the administrator access keys):
+```powershell
+Set-AWSCredential `
+                 -AccessKey AKIA0123456787EXAMPLE `
+                 -SecretKey wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY `
+                 -StoreAs Administrator
+```
+
+Next, save the configuration as the default profile and region for every PowerShell session:
+
+```powershell
+Initialize-AWSDefaultConfiguration -ProfileName Administrator -Region us-west-2
+```
+
+## AWS Tools for PowerShell Example Cmdlets
+
+Here are some example cmdlets:
 
 ### Create Key-Pair
 
